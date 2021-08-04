@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CustomerController extends AbstractController
 {
+
     #[Route('/customer', name: 'customer_list')]
     public function index()
     {

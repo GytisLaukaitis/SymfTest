@@ -24,14 +24,14 @@ class CustomerFixture extends Fixture {
         $manager->flush();
     }
 
-    private function getCustomer(): Customer
-    {
-
-        return new Customer(
-            $this->faker->firstName(),
-            $this->faker->lastName(),
-            $this->faker->email(),
-            $this->faker->phoneNumber(),
-        );
-    }
+//    private function getCustomer(): Customer
+//    {
+//
+//        return new Customer(
+//            $this->faker->firstName(),
+//            $this->faker->lastName(),
+//            $this->faker->email(),
+//            $this->faker->phoneNumber(),
+//        );
+//    }
 }

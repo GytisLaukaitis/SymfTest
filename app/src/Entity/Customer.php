@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Customer
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -36,6 +37,20 @@ class Customer
      * @ORM\Column(type="string", length=12)
      */
     private $phoneNumber;
+
+    /**
+     * @param $firstName
+     * @param $lastName
+     * @param $email
+     * @param $phoneNumber
+     */
+//    public function __construct($firstName, $lastName, $email, $phoneNumber)
+//    {
+//        $this->firstName = $firstName;
+//        $this->lastName = $lastName;
+//        $this->email = $email;
+//        $this->phoneNumber = $phoneNumber;
+//    }
 
     public function getId(): ?int
     {
