@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Customer{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row"><div class="col-8"><h1>{{ customer.firstName }}</h1></div>
+        <div class="row"><div class="col-8"><h1>{{ customer.lastName }}</h1></div>
+            <div class="col-4"><span class="text-info">Phone number: {{ customer.phoneNumber }} </span></div></div>
+    </div>
+    <div class="container-fluid"><p> {{ customer.email }}</p></div>
+
+    <a href="/customer" class="btn btn-primary"> Let's get back home <br>←</a>
+{% endblock %}

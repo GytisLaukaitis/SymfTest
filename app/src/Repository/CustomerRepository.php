@@ -4,7 +4,6 @@ namespace App\Repository;
 
 use App\Entity\Customer;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -15,45 +14,37 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CustomerRepository extends ServiceEntityRepository
 {
-    private $manager;
-
-    public function __construct
-    (
-        ManagerRegistry $registry,
-        EntityManagerInterface $manager
-    )
+    public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Customer::class);
-        $this->manager = $manager;
     }
 
-    public function saveCustomer($firstName, $lastName, $email, $phoneNumber)
+    // /**
+    //  * @return Customer[] Returns an array of Customer objects
+    //  */
+    /*
+    public function findByExampleField($value)
     {
-        $newCustomer = new Customer();
-
-        $newCustomer
-            ->setFirstName($firstName)
-            ->setLastName($lastName)
-            ->setEmail($email)
-            ->setPhoneNumber($phoneNumber);
-
-        $this->manager->persist($newCustomer);
-        $this->manager->flush();
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('c.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
     }
+    */
 
-    public function updateCustomer(Customer $customer, $data)
+    /*
+    public function findOneBySomeField($value): ?Customer
     {
-        empty($data['firstName']) ? true : $customer->setFirstName($data['firstName']);
-        empty($data['lastName']) ? true : $customer->setLastName($data['lastName']);
-        empty($data['email']) ? true : $customer->setEmail($data['email']);
-        empty($data['phoneNumber']) ? true : $customer->setPhoneNumber($data['phoneNumber']);
-
-        $this->manager->flush();
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
     }
-
-    public function removeCustomer(Customer $customer)
-    {
-        $this->manager->remove($customer);
-        $this->manager->flush();
-    }
+    */
 }

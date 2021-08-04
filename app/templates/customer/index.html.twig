@@ -32,8 +32,9 @@
                     <td>{{ customer.phoneNumber }}</td>
                     <td>
                         <a href="/customer/{{customer.id}}" class="btn btn-dark m-1">Show</a>
-                        <a href="/customer/edit/{{customer.id}}" class="btn btn-light m-1">Edit</a>
-                        <a href="/customer/delete/{{customer.id}}" class="btn btn-danger delete-article m-1" data-id="{{ customer.id}}">Delete</a>
+                        <a href="/customer/edit/{{customer.id}}" class="btn btn-secondary m-1">Edit</a>
+                        <a href="/customer/new" class="btn btn-primary m-1">Add new</a>
+                        <a href="/customer/delete/{{customer.id}}" class="btn btn-danger delete-customer m-1" data-id="{{ customer.id}}">Delete</a>
                     </td>
                 </tr>
             {% endfor %}

@@ -37,20 +37,6 @@ class Customer
      */
     private $phoneNumber;
 
-    /**
-     * @param $firstName
-     * @param $lastName
-     * @param $email
-     * @param $phoneNumber
-     */
-    public function __construct($firstName, $lastName, $email, $phoneNumber)
-    {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->email = $email;
-        $this->phoneNumber = $phoneNumber;
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -104,14 +90,4 @@ class Customer
         return $this;
     }
 
-    public function toArray()
-    {
-        return [
-            'id' => $this->getId(),
-            'firstName' => $this->getFirstName(),
-            'lastName' => $this->getLastName(),
-            'email' => $this->getEmail(),
-            'phoneNumber' => $this->getPhoneNumber()
-        ];
-    }
 }
